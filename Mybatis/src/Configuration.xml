@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <typeAliases> 
+	<!-- //JAVA类对应的别名 -->
+        <typeAlias alias="T" type="com.ccut.DAO.T"/> 
+    </typeAliases> 
+
+    <environments default="development">
+        <environment id="development">
+        <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+		<!-- //设置驱动 -->
+            <property name="driver" value="com.mysql.jdbc.Driver"/>
+		<!-- //链接 -->
+            <property name="url" value="jdbc:mysql://localhost:3306/xyd" />
+          <!--   //用户名 -->
+	    <property name="username" value="root"/>
+		<!-- //密码 -->
+            <property name="password" value="xuyandong"/>
+            </dataSource>
+        </environment>
+    </environments>
+    
+    <mappers>
+	<!-- //映射文件地址 -->
+        <mapper resource="com/ccut/database/User.xml"/>
+    </mappers>
+</configuration>
